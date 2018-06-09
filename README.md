@@ -13,9 +13,11 @@ Install dependencies
 cd <project_name>
 npm i
 ```
-Build and run the project
+Build the project (compile TypeScript + create Docker image)
 ```
-npm run build
-npm start
+npm run docker
 ```
-Or, if you're using VS Code, you can use `cmd + shift + b` to run the default build task (which is mapped to `npm run build`), and then you can use the command palette (`cmd + shift + p`) and select `Tasks: Run Task` > `npm: start` to run `npm start` for you.
+Run docker-compose (rabbitmq, mongodb, & tweet-reminder-webapp)
+```
+docker-compose up
+```

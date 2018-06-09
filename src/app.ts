@@ -14,11 +14,12 @@ import { SESSION_SECRET } from "./util/secrets";
 import { Request, Response } from "express";
 
 // Load environment variables from .env file, where API keys and passwords are configured
-dotenv.config({ path: ".env.example" });
+dotenv.config();
 
 // Controllers (route handlers)
 import * as homeController from "./controllers/home";
 import apiControllers from "./controllers/api";
+import QueueSender from "./lib/QueueSender";
 
 // Create Express server
 const app = express();
@@ -31,8 +32,15 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
-app.use(cookieParser("secret"));
-app.use(session({ cookie: { maxAge: 1000000000 }, secret: "secret" }));
+app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(
+  session({
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 1000000000 },
+    secret: process.env.SESSION_SECRET
+  })
+);
 app.use(flash());
 app.use(expressValidator());
 app.use(lusca.xframe("SAMEORIGIN"));

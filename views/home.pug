@@ -4,13 +4,13 @@ block content
   form(method='POST' action='/api/reminder/tweet')
     div.form-group
       label(for='handle') Twitter Handle:
-      input#handle.form-control(type='text', placeholder='@myHandle' name='handle')
+      input#handle.form-control(type='text', placeholder='myHandle' name='handle')
     div.form-group
       label(for='date') Date:
-      input#date.form-control(type='text', placeholder='MM/DD/YYYY (e.g. 03/25/2015)' name='date')
+      input#date.form-control(type='text', placeholder='MM/DD/YYYY (03/25/2015)' name='date')
     div.form-group
       label(for='time') Time:
-      input#time.form-control(type='text', placeholder='hh:mm:ss am/pm (e.g 10:30:00 am)' name='time')
+      input#time.form-control(type='text', placeholder='HH:MM am/pm in 12 hour time (4:30 pm)' name='time')
     div.form-group
       label(for='message') Message:
       input#message.form-control(type='text', placeholder='Go to doctors appt' name='message')

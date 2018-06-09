@@ -21,3 +21,6 @@ Run docker-compose (rabbitmq, mongodb, & tweet-reminder-webapp)
 ```
 docker-compose up
 ```
+The web app can be accessed on `localhost:8080`
+The RabbitMQ management dashboard can be accessed on `localhost:15672`
+And MongoDB can be accessed via Compass on `localhost:27018`

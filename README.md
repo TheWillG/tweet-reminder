@@ -26,3 +26,16 @@ The web app can be accessed on `localhost:8080`
 The RabbitMQ management dashboard can be accessed on `localhost:15672`
 
 And MongoDB can be accessed via Compass on `localhost:27018`
+
+# Messaging Output
+This microservice will output the following schema to RabbitMQ:
+```
+// AMQP_BROKER_URL=amqp://localhost:5672
+// AMQP_EXCHANGE_NAME=TwitterReminder
+// AMQP_EXPORT_QUEUE_NAME=webappexportqueue
+{
+  'handle': 'myTwitterHandle',
+  'datetime': '2011-10-05T14:48:00.000Z', //DateTime ISO String
+  'msg': 'Scheduled message!'
+}
+```

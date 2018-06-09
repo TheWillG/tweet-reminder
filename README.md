@@ -1,16 +1,21 @@
-# tweet-reminder
-## Getting Started
-Install server dependencies from root project directory
-```shell
+# Tweet Reminder
+
+Web app microservice for inputting details to receive a tweet reminder at a later time.
+
+
+# Pre-reqs
+To build and run this app locally you will need node:
+- Install [Node.js](https://nodejs.org/en/)
+
+# Getting started
+Install dependencies
+```
+cd <project_name>
 npm i
 ```
-Install client dependencies from the client directory
-```shell
-cd client
-npm i
+Build and run the project
 ```
-From the root project directory, run the app
-```shell
-npm run start
+npm run build
+npm start
 ```
-Now, navigate to http://localhost:3000 to view the app
+Or, if you're using VS Code, you can use `cmd + shift + b` to run the default build task (which is mapped to `npm run build`), and then you can use the command palette (`cmd + shift + p`) and select `Tasks: Run Task` > `npm: start` to run `npm start` for you.
